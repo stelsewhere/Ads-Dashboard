@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/styles.css">
+    <title>Document</title>
+</head>
+<body>
+  <div class="site-container">
+    <header class="header">
+      <div class="left-nav">
+        <button class="create-ads__btn btn-reset">Create Ads</button>
+        <button class="burger btn-reset header__burger">
+          <img src="img/side.svg" alt="">
+        </button>
+      </div>
+      <div class="dropdown">
+        <button class="notif btn-reset">
+          <img src="img/bell.svg" alt="">
+        </button>
+          <input id="check01" type="checkbox" name="menu" />
+          <label for="check01" class="account__btn btn-reset"> 
+            <span class="account__btn-organization">organization</span>
+          </label>
+          <div class="dropdown__content">
+              <span class="account">stelsewhere</span>
+              <div class="email-box">
+                <strong>Liu Kladko</strong>
+                <span>liu@gmail.com</span>
+              </div>
+              <a class="terms">Terms & Conditions</a>
+            </div>
+      </div>
+  </header>
+    <div id="modal" class="modal">
+      <div class="modal__content">
+        <div class="modal__top">
+          <div class="modal__text">Choose Campaign</div>
+          <div class="modal__select">
+            <select name="" id="">
+              <option value="0">Campaign</option>
+              <option value="1">Draft</option>
+            </select>
+          </div>
+          <div class="modal__select">
+            <select>
+              <option value="0">Awareness</option>
+              <option value="1">Awareness</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal__bottom">
+          <div class="modal__actions">
+            <button class="action-btn cancel-btn btn-reset">Cancel</button>
+            <button class="action-btn select-btn btn-reset">Select</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="campaign-creation__progress">
+      <button type="submit" value="submit" id="backButton" class="step-btn back-btn btn-reset">Next</button>
+      <div class="step-bar">
+        <div class="step">
+          <div class="step__bullet"></div>
+          <div class="step__text">1. Campaign</div>
+          <span class="step__line"></span>
+        </div>
+        <div class="step">
+          <div class="step__bullet"></div>
+          <div class="step__text">2. Ad Sets</div>
+          <span class="step__line"></span>
+        </div>
+        <div class="step">
+          <div class="step__bullet"></div>
+          <div class="step__text">3. Ads</div>
+          <span class="step__line"></span>
+        </div>
+        <div class="step">
+          <div class="step__bullet"></div>
+          <div class="step__text">4. Create</div>
+        </div>
+      </div>
+      
+        <button id="nextButton" class="step-btn next-btn btn-reset">Next</button>
+      
+    </div>
+    <div class="page -expanded js-container">
+      <aside class="sidebar">
+        <div class="sidebar__list">
+          <button class="sidebar__item btn-reset create-ad__btn">
+              <div class="sidebar__icon ">
+                <div class="create-ad__icon"></div>
+              </div>
+              <div class="sidebar__text">Create ad</div>
+          </button>
+          <button class="sidebar__item btn-reset">
+            <div class="sidebar__icon">
+              <img src="img/manage.svg" alt="">
+            </div>
+              <div class="sidebar__text">Manage Ads</div>
+          </button>
+          <button class="sidebar__item btn-reset">
+            <div class="sidebar__icon">
+              <img src="img/settings.svg" alt="">
+            </div>
+              <div class="sidebar__text">settings</div>
+          </button>
+        </div>
+      </aside>
+      <div class="campaign">
+            <div class="campaign__container section">
+              <h1 class="section__title">Build Your Campaign</h1>
+
+              <section class="section">
+                <div class="section__header">
+                  <h2 class="section__caption">Select Your Objective</h2>
+                </div>
+                <div class="section__card ">
+                  <div class="objectives">
+                    <span>Awareness</span>
+                    <span>Consideration</span>
+                    <span>Conversions</span>
+                    <div class="toggle-btns">
+                        <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Awareness</label></div>
+                    </div>
+                    <div class="toggle-btns">
+                        <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">App Installs</label></div>
+                        <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Drive Traffic to Websites</label></div>
+                        <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Drive Traffic to App</label></div>
+                        <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Engagement</label></div>
+                        <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Video Views</label></div>
+                        <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Lead Generation</label></div>
+                    </div>
+                    <div class="toggle-btns">
+                        <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">App conversions</label></div>
+                        <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Website Conversions</label></div>
+                        <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Catalog Sales</label></div>
+                    </div>
+                 </div>
+                </div> 
+              </section>
+              
+              <section class="section">
+                <div class="section__header section__header--setup">
+                  <h2 class="section__caption">Campaign Setup</h2>
+                  <div class="action">
+                    <button id="loadCampaign" class="action__btn btn-reset">Load Campaign</button>
+                  </div>
+                </div>
+                <div class="section__card">
+                  <div class="card__form">
+                    <div class="input error">
+                      <label for="campaignN">
+                        <span>Campaign Name</span>
+                      </label>
+                      <div class="input-base">
+                        <form>
+                          <input type="text" minlength="3" id="campaignN" placeholder="Your Campaign Name" name="campaign" required>
+                        </form>
+                        
+                      </div>
+                      <div class="input-error"></div>
+                    </div>
+                    <div class="input">
+                      <div class="input__label">
+                        <label class="label-toggle">Status</label>
+                      </div>
+                      <div>
+                        <label class="switch">
+                          <input class="check" type="checkbox" checked>
+                          <span class="slider"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="input">
+                      <div class="input__label">
+                        <label class="label-toggle">Create Split Test</label>
+                      </div>
+                      <div>
+                        <label class="switch">
+                          <input class="check" type="checkbox">
+                          <span class="slider"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="input error">
+                      <label class="error__label" for="dailyCap">
+                        <span>Daily Cap</span>
+                      </label>
+                      <div class="input-base">
+                        <input class="error__input" type="text" id="campaignN" placeholder="No Cap" name="campaign">
+                      </div>
+                      <div class="error__footnote">
+                        * Fill out the field
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </section>
+            </div> 
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="js/main.js"></script>
+</body>
+</html>
