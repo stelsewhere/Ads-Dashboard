@@ -41,26 +41,47 @@
     }
 }
 
-.completed {
-    background-color: gray;
+.step.active {
+    .step__bullet {
+        border: 1px solid $colorDark;
+    }
 }
 
-.current {
-    border: 1px solid $colorDark;
+.step.finish {
+    .step__bullet {
+        background-color: $colorDark;
+    }
 }
 
-.step-btn {
-    padding: 10px 20px;
-    border-radius: 25px;
-}
+.next-btn {
+    color: white;
+    background-color: $colorDark;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    min-height: 32px;
+    padding: 8px 20px;
+  }
+  
+  .back-btn {
+    color: $colorDark;
+    background-color: #fff;
+    border-radius: 100px;
+    border: 1px solid $colorGray2;
+    font-size: 14px;
+    font-weight: 600;
+    min-height: 32px;
+    padding: 8px 20px;
+  }
 
-.back-btn {
-    visibility: hidden;
-}
 
 .next-btn {
     color: white;
     font-size: 13px;
     font-weight: 600;
     background-color: $colorDark;
+}
+
+:disabled {
+    background-color: gray;
 }

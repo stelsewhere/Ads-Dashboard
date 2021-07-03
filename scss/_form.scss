@@ -1,122 +1,139 @@
-.card__form {
-    width: 100%;
+
+.tab {
+  display: none;
+  margin-bottom: 150px;
+
+  &__title {
+    display: inline-block;
+    border-bottom: 3px solid #ffd301;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 26px;
+    text-align: center;
+  }
+}
+
+.objectives {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.card {
+  text-align: left;
+  background-color: white;
+  margin: 0px 0px 16px;
+  border-radius: 6px;
+  box-shadow: rgb(0 0 0 / 4%) 0px 4px 8px 0px;
+  padding: 24px 24px;
+
+  &__wrapper {
+    margin-top: 40px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  &__caption {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
     text-align: left;
-}
-
-.input-base {
-  &__date {
-    display: flex;
   }
 }
 
-input {
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    height: 40px;
-    padding: 0 16px 1px;
-    width: 100%;
-    border-radius: 4px;
-    background-color: $colorGray3;
-    border: 1px solid transparent;
+.toggle-btns { 
+	display: flex;
+	flex-direction: column;
+    text-align: left;
 
-    &:hover {
-      border: 1px solid $colorAccent;
-      transition: border 0.3s ease-out 10ms;
+    div {
+        display: inline-block;
+        position: relative;
+        margin-right: 16px;
+        margin-bottom: 8px;
+
+        label {
+            position: absolute;
+            z-index: 0;
+            padding: 0 24px;
+        }
+
+        input {
+            position: absolute;
+            z-index: 1;
+            cursor: pointer;
+            opacity: 0;
+        }
     }
+}
 
-    &:focus {
-      border: 1px solid $colorGray3;
-      border-bottom: 2px solid $colorAccent;
-      background-color: #f0f1f2;
-  }
+.toggle-btn { 
+    text-align: left; 
+    color:$colorDark;
+    border-radius: 6px; 
+    border: solid 1px #CCC; 
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.toggle-btns * {
+    width: 100%;
+    height: 48px;
+    line-height: 46px;
+}
+
+.toggle-btns div:hover label {
+	transform: translateY(-2px);
+    border:solid 1px rgb(184, 184, 184);
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 8%);
+	transition: transform 0.2s linear 20ms;
+}
+.toggle-btns div input:checked + label {
+    border: 2px solid #ffd301;
 }
 
 label {
-    color: #53575b;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 24px;
+  display: inline-block;
+  color: #53575b;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  margin-bottom: 6px;
 }
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 55px;
-    height: 30px;
-  }
-
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #dadcdd;
-    transition: .4s;
-    border-radius: 34px;
-    border: 1px solid transparent;
-
-    &:hover {
-      border: 1px solid $colorAccent;
-    }
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 24px;
-    width: 24px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-  }
-
-  input:checked + .slider {
-    background-color: #02b790;
-  }
-
-  input:focus + .slider {
-    box-shadow: 0 0 1px #02b790;
-  }
-
-  input:checked + .slider:before {
-    transform: translateX(25px);
-  }
-
-  .input {
-    .check {
-      display: none;
-    }
-  }
-
-  .input {
-    margin-bottom: 20px;
-
-    &__label {
-      margin-bottom: 10px;
-    }
-  }
-  
-.error {
-  
-  &__label {
-    color: #c50a33;
-  }
-
-  &__input {
-    border: 1px solid #c50a33;
-  }
-
-  &__footnote {
-    padding-top: 10px;
-    font-size: 11px;
-    color: #c50a33;
-  }
+input {
+  color: #121314;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  background: #f7f8f9;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  height: 40px;
+  padding: 0 16px 1px;
+  width: 100%;
+  margin-bottom: 20px;
 }
+
+input:hover {
+  border: 1px solid $colorAccent;
+  transition: border 0.3s linear 20ms;
+}
+
+input:focus {
+  border: 1px solid #f7f8f9;
+  transition: border 0.3s linear 20ms;
+  border-bottom: 2px solid $colorAccent;
+  background-color: #ebecf0;
+}
+
+input.invalid {
+  border: 1px solid #c50a33;
+}
+

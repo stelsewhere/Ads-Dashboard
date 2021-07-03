@@ -51,38 +51,64 @@ window.onclick = function(event) {
 
 // stepProgress
 
-let backButton = document.getElementById("backButton");
-let nextButton = document.getElementById("nextButton");
-let bullets = [ ...document.querySelectorAll('.step__bullet')];
+var currentTab = 0;
+showTab(currentTab);
 
-const MAX_STEPS = 4;
-let currentStep = 1;
+function showTab(n) {
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
 
-nextButton.addEventListener('click', () => {
- let currentBullet = bullets[currentStep - 1];
- let prevBullet = bullets[currentStep];
- prevBullet.classList.add('current');
- currentBullet.classList.add('completed');
- currentStep++;
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
 
-});
-
-backButton.addEventListener('click', () => {
-  let currentBullet = bullets[currentStep - 1];
-  let previousBullet = bullets[currentStep - 2];
-  previousBullet.classList.remove('completed');
-  previousBullet.classList.remove('current');
-  currentStep--;
-})
-
-
-
-
-
-     function validateForm() {
-     let input = document.forms["form"]["campaign"].value;
-     if (input == "") {
-        alert("Fill out your name");
-        return false;
-        }
+  fixStepIndicator(n)
 }
+
+function nextPrev(n) {
+  var x = document.getElementsByClassName("tab");
+  if (n == 1 && !validateForm()) return false;
+  x[currentTab].style.display = "none";
+  currentTab = currentTab + n;
+  if (currentTab >= x.length) {
+    document.getElementById("form").submit();
+    return false;
+  }
+
+  showTab(currentTab);
+}
+
+
+function validateForm() {
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  for (i = 0; i < y.length; i++) {
+    if (y[i].value == "") {
+      y[i].className += " invalid";
+      valid = false;
+    }
+  }
+
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid;
+}
+
+
+function fixStepIndicator(n) {
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+    x[n].className += " active";
+}
+}
+
