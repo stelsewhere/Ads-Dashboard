@@ -60,7 +60,6 @@
       </div>
     </div>
     <div class="campaign-creation__progress">
-      <button class="step-btn back-btn" type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
       <div class="step-bar">
         <div class="step">
           <div class="step__bullet"></div>
@@ -77,13 +76,9 @@
           <div class="step__text">3. Create</div>
         </div>
       </div>
-      
-    
-        
-        <button class="next-btn" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-      
-      
     </div>
+    <button class="step-btn back-btn" type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
+    <button class="next-btn" type="submit" id="nextBtn" onclick="nextPrev(1)">Next</button>
     <div class="page -expanded js-container">
       <aside class="sidebar">
         <div class="sidebar__list">
@@ -109,39 +104,40 @@
       </aside>
       <div class="campaign">
             <div class="campaign__container section">
+              <form id="form">
               <div class="tab">
                   <h1 class="tab__title">Build Your Campaign</h1>
                   <div class="card__wrapper">
                     <div class="card__header">
-                      <h2 class="card__caption">Campaign Setup</h2>
+                      <h2 class="card__caption">Select Your Objective</h2>
                     </div>
                     
                     <div class="card">
                       <div class="objectives">
                         <div class="toggle-btns">
-                          <label for="campaign">
+                          <label>
                             <span>Campaign Name</span>
                           </label>
-                          <div><input type="radio" required name="group4"/><label onclick="" class="toggle-btn">Awareness</label></div>
+                          <div><input type="radio"/><label onclick="" class="toggle-btn">Awareness</label></div>
                       </div>
                       <div class="toggle-btns">
-                        <label for="campaign">
-                          <span>Campaign Name</span>
+                        <label>
+                          <span>Consideration</span>
                         </label>
-                          <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">App Installs</label></div>
-                          <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Drive Traffic to Websites</label></div>
-                          <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Drive Traffic to App</label></div>
-                          <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Engagement</label></div>
-                          <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Video Views</label></div>
-                          <div><input type="radio" name="group4"/><label onclick="" class="toggle-btn">Lead Generation</label></div>
+                          <div><input type="radio"/><label onclick="" class="toggle-btn">App Installs</label></div>
+                          <div><input type="radio"/><label onclick="" class="toggle-btn">Drive Traffic to Websites</label></div>
+                          <div><input type="radio"/><label onclick="" class="toggle-btn">Drive Traffic to App</label></div>
+                          <div><input type="radio"/><label onclick="" class="toggle-btn">Engagement</label></div>
+                          <div><input type="radio"/><label onclick="" class="toggle-btn">Video Views</label></div>
+                          <div><input type="radio"/><label onclick="" class="toggle-btn">Lead Generation</label></div>
                       </div>
                       <div class="toggle-btns">
-                        <label for="campaign">
-                          <span>Campaign Name</span>
+                        <label>
+                          <span>Conversions</span>
                         </label>
-                          <div><input type="radio" required name="group4"/><label onclick="" class="toggle-btn">App conversions</label></div>
-                          <div><input type="radio" required name="group4"/><label onclick="" class="toggle-btn">Website Conversions</label></div>
-                          <div><input type="radio" required name="group4"/><label onclick="" class="toggle-btn">Catalog Sales</label></div>
+                          <div><input type="radio"/><label onclick="" class="toggle-btn">App conversions</label></div>
+                          <div><input type="radio"/><label onclick="" class="toggle-btn">Website Conversions</label></div>
+                          <div><input type="radio"/><label onclick="" class="toggle-btn">Catalog Sales</label></div>
                       </div>
 
                       </div>
@@ -161,7 +157,7 @@
                     <label for="campaign">
                       <span>Campaign Name</span>
                     </label>
-                    <p><input placeholder = "Campaign Name" oninput="this.className = ''" name="campaign"></p>
+                    <p><input placeholder = "Campaign Name" oninput="this.className = ''" name="campaign" class="campaignName" value=""></p>
                     <div class="input">
                       <div class="input__label">
                         <label class="label-toggle">Status</label>
@@ -197,16 +193,45 @@
                     </div>
                     
                     <div class="card">
-                      <label for="campaign">
+                      <label for="adSet">
                         <span>Ad Set Name</span>
                       </label>
                       <p><input placeholder = "Ad Set Name" oninput="this.className = ''" name="adSet"></p>
-                      <label for="campaign">
+                      <label for="goal">
                         <span>Goal</span>
                       </label>
                       <p><input placeholder = "Goal" oninput="this.className = ''" name="goal"></p>
             
-                      <div><input type="radio" required name="group4"/><label onclick="" class="toggle-btn">App conversions</label></div>
+                      <div class="input">
+                        <div class="input__label">
+                          <label class="label-toggle">Pixel</label>
+                        </div>
+                        <div>
+                          <label class="switch">
+                            <input class="check" type="checkbox">
+                            <span class="slider"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+
+                <div class="tab">
+                  <h1 class="tab__title">Review & Publish</h1>
+                  <div class="card__wrapper">
+                    <div class="card__header">
+                      <h2 class="card__caption">Ad Set Details</h2>
+                    </div>
+                    
+                    <div class="card">
+                      <label for="campaign">
+                        <span>Campaign</span>
+                      </label>
+                      <p class="message">Campaign name</p>
+                      
+                        </div>
+                      </div>
                     </div>
                   </div> 
                 </div>

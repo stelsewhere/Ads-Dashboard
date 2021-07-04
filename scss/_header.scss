@@ -33,6 +33,7 @@
     width: 200px;
     border-radius: 6px;
     box-shadow: 0 2px 7px rgb(0 0 0/ 8%);
+    margin-top: -20px;
 
     label {
         position: relative;
@@ -91,7 +92,7 @@
     }
 
     label {
-        transform: translateY(-26px);
+        transform: translateY(-42px);
     }
 }
 

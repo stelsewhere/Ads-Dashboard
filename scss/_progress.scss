@@ -4,8 +4,8 @@
     border-top: 1px solid #e9eaeb;
     bottom: 0;
     box-shadow: 0 4px 8px rgb(0 0 0 / 4%);
-    justify-content: space-between;
-    padding: 14px 32px;
+    justify-content: center;
+    padding: 24px 32px;
     position: fixed;
     width: 100%;
     z-index: 500;
@@ -49,11 +49,18 @@
 
 .step.finish {
     .step__bullet {
-        background-color: $colorDark;
+        border: 1px solid rgb(2, 183, 144);
+        background-image: url('../img/check\ 1.svg');
+        background-size: 11px 11px;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }
 
 .next-btn {
+    position: fixed;
+    bottom: 16px;
+    right: 24px;
     color: white;
     background-color: $colorDark;
     border-radius: 100px;
@@ -61,26 +68,35 @@
     font-weight: 600;
     min-height: 32px;
     padding: 8px 20px;
+    z-index: 503;
+    border: 1px solid transparent;
+    transition: all 0.3s linear 10ms;
+
+    &:hover {
+        background-color: rgb(36, 36, 37);
+        border: 1px solid $colorAccent;
+    }
   }
   
   .back-btn {
+    position: fixed;
+    bottom: 16px;
+    left: 24px;
     color: $colorDark;
     background-color: #fff;
     border-radius: 100px;
-    border: 1px solid $colorGray2;
+    border: 1px solid rgb(240, 240, 240);
     font-size: 14px;
     font-weight: 600;
     min-height: 32px;
     padding: 8px 20px;
+    z-index: 503;
+    transition: all 0.3s linear 10ms;
+
+    &:hover {
+        border: 1px solid $colorAccent;
+    }
   }
-
-
-.next-btn {
-    color: white;
-    font-size: 13px;
-    font-weight: 600;
-    background-color: $colorDark;
-}
 
 :disabled {
     background-color: gray;
