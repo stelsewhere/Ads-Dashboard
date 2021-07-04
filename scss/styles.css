@@ -513,6 +513,11 @@ input:checked ~ .dropdown__content {
   line-height: 28px;
   text-align: left;
 }
+.card p {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
 
 .toggle-btns {
   display: -webkit-box;
@@ -598,7 +603,6 @@ input {
   height: 40px;
   padding: 0 16px 1px;
   width: 100%;
-  margin-bottom: 20px;
 }
 
 input:hover {

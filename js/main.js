@@ -115,11 +115,14 @@ function fixStepIndicator(n) {
 
 // Return input values
 
-let message = document.querySelector('.message');
-let form = getElementById('form');
-let campaign = document.querySelector('.campaignName');
+var message = document.getElementById("message");
+var value = document.getElementById("value");
+document.getElementById("nextBtn").addEventListener("click", function() {
+  value.textContent=message.value;
+});
 
-form.onsubmit = function(evt) {
-  evt.preventDefault();
-  message.textContent = campaignName.value;
-};
+var message2 = document.getElementById("message2");
+var value2 = document.getElementById("value2");
+document.getElementById("nextBtn").addEventListener("click", function() {
+  value2.textContent=message2.value;
+});
