@@ -213,8 +213,8 @@ input:checked ~ .dropdown__content {
           transform: translateX(-30px);
 }
 .dropdown label {
-  -webkit-transform: translateY(-42px);
-          transform: translateY(-42px);
+  -webkit-transform: translateY(-22px);
+          transform: translateY(-22px);
 }
 
 .notif {
