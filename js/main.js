@@ -1,10 +1,10 @@
 // sidebar
 
-var $container = document.querySelector('.page');
-var $expand = document.querySelector('.burger');
+var container = document.querySelector('.page');
+var expand = document.querySelector('.burger');
 
 $expand.addEventListener('click', function(evt) {
-  toggleClass($container, ['-collapsed', '-expanded']);
+  toggleClass(container, ['-collapsed', '-expanded']);
 });
 
 function toggleClass(el, className) {
